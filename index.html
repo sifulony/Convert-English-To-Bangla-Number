@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<title>Convert/Replace English To Bangla Number (ইংলিশ নাম্বার বাংলা নাম্বারে রূপান্তর করুন) </title>
+
+<body>
+
+    <div>
+        <h2>Convert English To Bangla Number (ইংলিশ নাম্বার , বাংলা নাম্বারে রূপান্তর করুন)</h2>
+        <p>Type a number in english to convert to bangla number:(বাংলায় নম্বর রূপান্তর করতে ইংরেজিতে একটি সংখ্যা
+            লিখুন:)</p>
+
+        <p>
+            <label>English number:</label>
+            <input id="inputMiles" type="number" placeholder="0 1 2 4 5..." oninput="eng2bd(this.value)"
+                onchange="eng2bd(this.value)">
+        </p>
+        <p>বাংলায়: <span id="banglaNumber"></span></p>
+        <hr>
+
+        <h2>Convert Bangla to English Number (বাংলা নাম্বার ,ইংলিশ নাম্বারে রূপান্তর করুন)</h2>
+        <p>Type a number in bangla to convert to english number: (ইংলিশ নম্বরে রূপান্তর করতে বাংলায় একটি সংখ্যা লিখুন:)
+        </p>
+
+        <p>
+            <label>বাংলায় নাম্বার:</label>
+            <input id="inputMiles" type="text" placeholder="০ ১ ২ ৪ ৫..." oninput="bd2eng(this.value)"
+                onchange="bd2eng(this.value)">
+        </p>
+        <p>English number: <span id="englishNumber"></span></p>
+        <hr>
+    </div>
+
+
+    <script src="./convertBanglaToEnglishNumber.js"></script>
+</body>
+
+</html>
