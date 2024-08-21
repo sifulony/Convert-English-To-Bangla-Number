@@ -1,37 +1,77 @@
 <!DOCTYPE html>
-<html>
-<title>Convert/Replace English To Bangla Number (ইংলিশ নাম্বার বাংলা নাম্বারে রূপান্তর করুন) </title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert/Replace English To Bangla Number (ইংলিশ নাম্বার বাংলা নাম্বারে রূপান্তর করুন)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h2 {
+            color: #0056b3;
+            margin-top: 30px;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="number"],
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        @media (min-width: 600px) {
+            .container {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
 
 <body>
 
-    <div>
-        <h2>Convert English To Bangla Number (ইংলিশ নাম্বার , বাংলা নাম্বারে রূপান্তর করুন)</h2>
-        <p>Type a number in english to convert to bangla number:(বাংলায় নম্বর রূপান্তর করতে ইংরেজিতে একটি সংখ্যা
-            লিখুন:)</p>
+    <div class="container">
+        <h2>Convert English To Bangla Number <br>(ইংলিশ নাম্বার , বাংলা নাম্বারে রূপান্তর করুন)</h2>
+        <p>Type a number in English to convert to Bangla number:<br> (বাংলায় নম্বর রূপান্তর করতে ইংরেজিতে একটি সংখ্যা লিখুন:)</p>
 
         <p>
-            <label>English number:</label>
-            <input id="inputMiles" type="number" placeholder="0 1 2 4 5..." oninput="eng2bd(this.value)"
-                onchange="eng2bd(this.value)">
+            <label for="inputMiles">English number:</label>
+            <input id="inputMiles" type="number" placeholder="0 1 2 4 5..." oninput="eng2bd(this.value)" onchange="eng2bd(this.value)">
         </p>
         <p>বাংলায়: <span id="banglaNumber"></span></p>
         <hr>
 
-        <h2>Convert Bangla to English Number (বাংলা নাম্বার ,ইংলিশ নাম্বারে রূপান্তর করুন)</h2>
-        <p>Type a number in bangla to convert to english number: (ইংলিশ নম্বরে রূপান্তর করতে বাংলায় একটি সংখ্যা লিখুন:)
-        </p>
+        <h2>Convert Bangla to English Number <br>(বাংলা নাম্বার ,ইংলিশ নাম্বারে রূপান্তর করুন)</h2>
+        <p>Type a number in Bangla to convert to English number:<br> (ইংলিশ নম্বরে রূপান্তর করতে বাংলায় একটি সংখ্যা লিখুন:)</p>
 
         <p>
-            <label>বাংলায় নাম্বার:</label>
-            <input id="inputMiles" type="text" placeholder="০ ১ ২ ৪ ৫..." oninput="bd2eng(this.value)"
-                onchange="bd2eng(this.value)">
+            <label for="inputBangla">বাংলায় নাম্বার:</label>
+            <input id="inputBangla" type="text" placeholder="০ ১ ২ ৪ ৫..." oninput="bd2eng(this.value)" onchange="bd2eng(this.value)">
         </p>
         <p>English number: <span id="englishNumber"></span></p>
         <hr>
     </div>
 
-
     <script src="./convertBanglaToEnglishNumber.js"></script>
 </body>
-
 </html>
