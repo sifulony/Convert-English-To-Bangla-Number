@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Number to Bangla Word</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h2 {
+            color: #0056b3;
+            margin-top: 30px;
+        }
+        p {
+            margin: 10px 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .result {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Convert Number to Bangla Word</h2>
+        <p>Enter a number to convert it to Bangla words:</p>
+        <p>
+            <label for="numberInput">Number:</label>
+            <input id="numberInput" type="number" placeholder="Enter number" oninput="convertToBanglaWords(this.value)">
+        </p>
+        <p>Bangla Words: <span id="banglaWords" class="result"></span></p>
+    </div>
+
+    <script>
+        function convertToBanglaWords(num) {
+            const ones = ["", "এক", "দুই", "তিন", "চার", "পাঁচ", "ছয়", "সাত", "আট", "নয়"];
+            const tens = ["", "দশ", "বিশ", "ত্রিশ", "চল্লিশ", "পঞ্চাশ", "ষাট", "সত্তর", "আশি", "নব্বই"];
+            const hundreds = ["", "শত", "দুশত", "তিনশত", "চারশত", "পাঁচশত", "ছয়শত", "সাতশত", "আটশত", "নয়শত"];
+            const thousand = "হাজার";
+
+            if (num === '') return;
+
+            let numString = num.toString();
+            let banglaWords = '';
+            
+            // Handle thousands, hundreds, tens, and ones
+            if (num >= 1000) {
+                let thousandsPart = Math.floor(num / 1000);
+                banglaWords += ones[thousandsPart] + " " + thousand + " ";
+                num = num % 1000;
+            }
+            
+            if (num >= 100) {
+                let hundredsPart = Math.floor(num / 100);
+                banglaWords += hundreds[hundredsPart] + " ";
+                num = num % 100;
+            }
+            
+            if (num >= 10) {
+                let tensPart = Math.floor(num / 10);
+                banglaWords += tens[tensPart] + " ";
+                num = num % 10;
+            }
+            
+            if (num > 0) {
+                banglaWords += ones[num];
+            }
+            
+            document.getElementById('banglaWords').innerText = banglaWords.trim() || 'শূন্য';
+        }
+    </script>
+</body>
+</html>
